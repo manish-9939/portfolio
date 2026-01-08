@@ -677,6 +677,23 @@ nav a:hover::after {
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
 }
 
+.project-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+.project-img-container {
+  overflow: hidden;
+  height: 220px;
+  position: relative;
+}
+
 .project-info {
   padding: 2rem;
 }
@@ -699,6 +716,46 @@ nav a:hover::after {
   color: var(--text-muted);
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--primary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.btn-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn-link i {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-link:hover i {
+  transform: translate(3px, -3px);
 }
 
 /* Certifications */
