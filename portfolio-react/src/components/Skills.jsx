@@ -9,7 +9,8 @@ const SkillCategory = ({ title, icon, skills, list }) => {
         if (!container) return;
 
         const tags = Array.from(container.querySelectorAll('.tag'));
-        const r = 100; // Fixed radius
+        const r = 85; // Optimized radius for the container
+        let angleX = 0;
         let angleY = 0;
         let requestID;
         let isVisible = false;
@@ -22,37 +23,47 @@ const SkillCategory = ({ title, icon, skills, list }) => {
         });
         observer.observe(container);
 
-        // Distribute tags
-        const step = (2 * Math.PI) / tags.length;
+        // Distribute tags spherically
         tags.forEach((tag, i) => {
-            tag.dataset.theta = step * i;
+            const phi = Math.acos(-1 + (2 * i) / tags.length);
+            const theta = Math.sqrt(tags.length * Math.PI) * phi;
+            tag.dataset.phi = phi;
+            tag.dataset.theta = theta;
         });
 
         const render = () => {
             if (isVisible) {
+                angleX += 0.003;
                 angleY += 0.005;
 
                 tags.forEach(tag => {
+                    const phi = parseFloat(tag.dataset.phi);
                     const theta = parseFloat(tag.dataset.theta) + angleY;
-                    const x = r * Math.cos(theta);
-                    const z = r * Math.sin(theta);
-                    const y = 0;
 
-                    const scale = (z + r * 3) / (r * 3);
-                    const alpha = (z + r) / (2 * r) + 0.3;
+                    // 3D Spherical Coordinates
+                    const x = r * Math.sin(phi) * Math.cos(theta);
+                    const y = r * Math.sin(phi) * Math.sin(theta);
+                    const z = r * Math.cos(phi);
+
+                    // Perspective Calculations
+                    const scale = (z + r * 2.5) / (r * 2.5);
+                    const alpha = (z + r) / (2 * r) + 0.2;
 
                     tag.style.transform = `translate3d(${x}px, ${y}px, ${z}px) scale(${scale})`;
-                    tag.style.opacity = Math.min(Math.max(alpha, 0.4), 1);
+                    tag.style.opacity = Math.min(Math.max(alpha, 0.3), 1);
                     tag.style.zIndex = Math.floor(scale * 100);
 
+                    // Counter-rotate the text/icon so it stays readable
                     const iconEl = tag.querySelector('i');
                     if (iconEl) {
-                        iconEl.style.transform = `rotateY(${-theta}rad)`;
+                        // Keep content upright
+                        tag.style.perspective = '1000px';
                     }
                 });
             }
             requestID = requestAnimationFrame(render);
         };
+
 
         render();
 
