@@ -194,7 +194,7 @@ const Skills = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                <h2 style={{ textAlign: 'center' }}>Technical <span>Orbit</span></h2>
+                <h2 style={{ textAlign: 'center' }}>Technical <span>Skills</span></h2>
                 <p style={{ color: 'var(--text-muted)', textAlign: 'center', marginTop: '1rem', fontStyle: 'italic' }}>
                     Drag the sphere to explore my technology universe
                 </p>
