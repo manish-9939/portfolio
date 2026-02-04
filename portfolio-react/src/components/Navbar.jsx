@@ -36,16 +36,6 @@ const Navbar = () => {
         <header>
             <Link to="/" className="logo" onClick={closeMenu}>MK</Link>
 
-            <div className="header-actions">
-                <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
-                    {theme === 'dark' ? '☀️' : '🌙'}
-                </button>
-
-                <div className="menu-toggle" id="mobile-menu" onClick={toggleMenu}>
-                    <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
-                </div>
-            </div>
-
             <nav className={isMobileMenuOpen ? 'active' : ''}>
                 <ul className="nav-list">
                     {navItems.map((item) => (
@@ -59,11 +49,19 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                     ))}
+                    <li className="theme-toggle-container">
+                        <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle Theme">
+                            {theme === 'dark' ? '☀️' : '🌙'}
+                        </button>
+                    </li>
                 </ul>
             </nav>
+
+            <div className="menu-toggle" onClick={toggleMenu}>
+                <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+            </div>
         </header>
     );
 };
 
 export default Navbar;
-
