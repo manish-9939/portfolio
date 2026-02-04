@@ -75,17 +75,19 @@ const Projects = () => {
                 </motion.div>
 
                 <motion.div className="project-card" variants={item} whileHover={{ y: -15 }}>
-                    <div className="project-img-overlay"
-                        style={{ height: '220px', background: 'linear-gradient(to bottom, var(--secondary), var(--bg-color))', opacity: 0.2 }}>
+                    <div className="project-img-container">
+                        <img src="/images/toneiq.png" alt="ToneIQ Sentiment Analysis" className="project-img" />
+                        <div className="project-img-overlay"
+                            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to bottom, var(--secondary), transparent)', opacity: 0.2 }}>
+                        </div>
                     </div>
                     <div className="project-info">
-                        <h3>Number Guessing Game</h3>
-                        <p className="project-tech">C Language • Logic</p>
+                        <h3>ToneIQ - AI Sentiment Engine</h3>
+                        <p className="project-tech">React 19, Flask, RoBERTa (DL), Scikit-Learn (ML), ABSA, NLP</p>
                         <p className="project-desc">
-                            A classic interactive console game optimizing binary search logic concepts.
-                            Users guess a randomly generated number with dynamic hint feedback.
+                            A sophisticated Sentiment Analysis platform bridging text and human emotion. Built with React-Flask, it features Dual RoBERTa Transformers for sarcasm detection, Hinglish optimization, and ABSA for granular insights.
                         </p>
-                        <a href="#" className="btn-link">View Details <i className="fas fa-arrow-right"></i></a>
+                        <a href="https://toneiq.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-link">Live Preview <i className="fas fa-external-link-alt"></i></a>
                     </div>
                 </motion.div>
 
