@@ -1,92 +1,110 @@
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 const Projects = () => {
-    const projects = [
+    // Professional Project Data
+    const projects = useMemo(() => [
         {
             id: "01",
-            title: "ToneIQ - AI Sentiment Engine",
+            title: "ToneIQ",
+            subtitle: "Advanced AI Sentiment Analysis",
             category: "Artificial Intelligence",
-            tech: ["React 19", "Python", "RoBERTa", "NLU"],
-            desc: "An enterprise-grade sentiment analysis engine with sarcasm detection and aspect-based insights. Bridging the gap between raw text and human emotion.",
+            tech: ["React 19", "Flask", "RoBERTa", "NLP"],
+            desc: "A powerful sentiment engine that decodes complex human emotions with 98% accuracy. Features real-time sarcasm detection and aspect-based analysis.",
             img: "/images/toneiq.png",
             link: "https://toneiq.vercel.app/",
-            color: "#4D96FF"
+            size: "large", // For Bento Grid
+            accent: "#4D96FF"
         },
         {
             id: "02",
-            title: "CafeBliss - Premium Experience",
-            category: "E-Commerce",
-            tech: ["React", "Framer Motion", "GSAP"],
-            desc: "A luxury coffee shop experience featuring immersive animations, fluid transitions, and a seamless reservation system.",
+            title: "CafeBliss",
+            subtitle: "E-commerce Experience",
+            category: "Web App",
+            tech: ["React", "Framer", "CSS3"],
+            desc: "Premium coffee shop interface focusing on visual storytelling and ultra-smooth animations.",
             img: "/images/coffee.png",
             link: "https://cafebliss-six.vercel.app/",
-            color: "#FFD93D"
+            size: "small",
+            accent: "#FFD93D"
         },
         {
             id: "03",
-            title: "Symmetry - Business Studio",
-            category: "Startup Solutions",
-            tech: ["JavaScript", "Tailwind", "Firebase"],
-            desc: "Custom management dashboard for salons and wellness centers, focusing on workflow optimization and customer engagement.",
+            title: "Symmetry",
+            subtitle: "Business Workflow",
+            tech: ["JS", "Firebase"],
+            desc: "Minimalist management studio for professional service providers.",
             img: "/images/salon.png",
             link: "https://parlourcafe.vercel.app/",
-            color: "#FF6B6B"
+            size: "small",
+            accent: "#FF6B6B"
         }
-    ];
+    ], []);
 
     return (
-        <section id="projects" className="projects-pro-section">
-            <div className="section-header">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-                    <span className="pro-subtitle">Architecture & Design</span>
-                    <h2 className="pro-title">Selected <span>Work</span></h2>
-                </motion.div>
-                <div className="pro-scroll-hint">
-                    <span>Swipe to explore</span>
-                    <div className="swipe-line"></div>
-                </div>
-            </div>
-
-            <div className="pro-projects-container">
-                {projects.map((project, index) => (
+        <section id="projects" className="bento-projects-section">
+            <div className="bento-container">
+                <div className="bento-header">
                     <motion.div
-                        key={index}
-                        className="pro-card"
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6 }}
                     >
-                        <div className="pro-card-image">
-                            <img src={project.img} alt={project.title} />
-                            <div className="pro-card-overlay" style={{ background: `linear-gradient(to top, #000, transparent)` }}>
-                                <div className="pro-card-category">{project.category}</div>
-                            </div>
-                        </div>
-                        <div className="pro-card-content">
-                            <div className="pro-tech-list">
-                                {project.tech.map((t, i) => (
-                                    <span key={i} className="pro-tech-tag">{t}</span>
-                                ))}
-                            </div>
-                            <h3 className="pro-card-title">{project.title}</h3>
-                            <p className="pro-card-desc">{project.desc}</p>
-                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="pro-view-btn">
-                                View Project
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg>
-                            </a>
-                        </div>
-                        <div className="pro-card-number">{project.id}</div>
+                        <span className="bento-tag">Work & Innovation</span>
+                        <h2 className="bento-title">Selected <span>Showcase</span></h2>
                     </motion.div>
-                ))}
+                </div>
+
+                <div className="bento-grid">
+                    {projects.map((project, index) => (
+                        <motion.div
+                            key={index}
+                            className={`bento-card ${project.size}`}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                        >
+                            <div className="bento-card-inner">
+                                <div className="bento-image-layer">
+                                    <img src={project.img} alt={project.title} />
+                                    <div className="bento-overlay"></div>
+                                </div>
+
+                                <div className="bento-info">
+                                    <div className="bento-top">
+                                        <div className="bento-label">
+                                            <span className="dot" style={{ background: project.accent }}></span>
+                                            {project.id} / PROJECT
+                                        </div>
+                                        <div className="bento-tech-compact">
+                                            {project.tech.slice(0, 2).map((t, i) => (
+                                                <span key={i}>{t}</span>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="bento-mid">
+                                        <h3>{project.title}</h3>
+                                        {project.size === 'large' && <p>{project.desc}</p>}
+                                    </div>
+
+                                    <div className="bento-bottom">
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="bento-link">
+                                            <span className="link-text">Explore</span>
+                                            <div className="bento-mini-icon">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                                                </svg>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );
