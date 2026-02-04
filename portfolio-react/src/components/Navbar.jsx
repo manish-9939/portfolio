@@ -1,9 +1,19 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+    };
 
     const toggleMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -25,9 +35,17 @@ const Navbar = () => {
     return (
         <header>
             <Link to="/" className="logo" onClick={closeMenu}>MK</Link>
-            <div className="menu-toggle" id="mobile-menu" onClick={toggleMenu}>
-                <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+
+            <div className="header-actions">
+                <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
+                    {theme === 'dark' ? '☀️' : '🌙'}
+                </button>
+
+                <div className="menu-toggle" id="mobile-menu" onClick={toggleMenu}>
+                    <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+                </div>
             </div>
+
             <nav className={isMobileMenuOpen ? 'active' : ''}>
                 <ul className="nav-list">
                     {navItems.map((item) => (
@@ -46,7 +64,6 @@ const Navbar = () => {
         </header>
     );
 };
-
 
 export default Navbar;
 
