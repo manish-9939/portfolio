@@ -83,7 +83,7 @@ const Projects = () => {
                     </div>
                     <div className="project-info">
                         <h3>ToneIQ - AI Sentiment Engine</h3>
-                        <p className="project-tech">React 19, Flask, RoBERTa (DL), Scikit-Learn (ML), ABSA, NLP</p>
+                        <p className="project-tech"><b>Frontend:</b> React 19, MUI v7 | <b>Backend:</b> Flask, RoBERTa (DL), ML, NLP</p>
                         <p className="project-desc">
                             A sophisticated Sentiment Analysis platform bridging text and human emotion. Built with React-Flask, it features Dual RoBERTa Transformers for sarcasm detection, Hinglish optimization, and ABSA for granular insights.
                         </p>
