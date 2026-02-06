@@ -25,7 +25,7 @@ const Certifications = () => {
                         fontWeight: 900,
                         fontSize: { xs: '2.2rem', md: '3rem' },
                         letterSpacing: -1
-                    }}>MySuperCertifications</Typography>
+                    }}>Certifications</Typography>
                 </Box>
 
                 <Grid container spacing={{ xs: 2.5, md: 4 }}>
