@@ -141,8 +141,7 @@ const About = () => {
                                         width: '100%',
                                         height: '100%',
                                         objectFit: 'cover',
-                                        objectPosition: 'center 10%',
-                                        transform: 'scale(1.25)'
+                                        objectPosition: 'center'
                                     }}
                                 />
                             </Box>
