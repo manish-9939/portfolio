@@ -188,8 +188,8 @@ const Hero = () => {
                 />
                 <Box sx={{
                     position: 'relative',
-                    width: { xs: 240, sm: 300, md: 380 },
-                    height: { xs: 240, sm: 300, md: 380 },
+                    width: { xs: 240, sm: 300, md: 320 },
+                    height: { xs: 240, sm: 300, md: 320 },
                     zIndex: 2,
                     borderRadius: '50%',
                     overflow: 'hidden',

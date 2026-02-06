@@ -120,7 +120,7 @@ const About = () => {
                             <Box sx={{
                                 position: 'relative',
                                 width: '100%',
-                                maxWidth: '400px',
+                                maxWidth: '340px',
                                 aspectRatio: '4/5',
                                 borderRadius: '40px',
                                 overflow: 'hidden',
@@ -141,7 +141,7 @@ const About = () => {
                                         width: '100%',
                                         height: '100%',
                                         objectFit: 'cover',
-                                        objectPosition: 'center 15%'
+                                        objectPosition: 'center 12%'
                                     }}
                                 />
                             </Box>
