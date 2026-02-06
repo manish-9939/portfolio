@@ -49,7 +49,7 @@ const Navbar = ({ themeMode, toggleTheme }) => {
                     zIndex: (theme) => theme.zIndex.drawer + 1,
                 }}
             >
-                <Container maxWidth="lg">
+                <Container maxWidth="xl">
                     <Box sx={{
                         display: 'flex',
                         alignItems: 'center',

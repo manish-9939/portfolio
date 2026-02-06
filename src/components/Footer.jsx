@@ -16,7 +16,7 @@ const Footer = () => {
             position: 'relative',
             zIndex: 10
         }}>
-            <Container maxWidth="md">
+            <Container maxWidth="xl">
                 <Stack
                     direction={{ xs: 'column', md: 'row' }}
                     spacing={{ xs: 2, md: 3 }}

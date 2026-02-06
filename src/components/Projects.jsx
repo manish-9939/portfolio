@@ -46,7 +46,7 @@ const Projects = () => {
 
     return (
         <Box component="section" id="projects" sx={{ py: { xs: 10, md: 15 } }}>
-            <Container maxWidth="lg">
+            <Container maxWidth="xl">
                 <Box sx={{ mb: { xs: 8, md: 12 }, textAlign: 'center' }}>
                     <Typography variant="overline" color="primary" sx={{ fontWeight: 800, letterSpacing: 4, fontSize: '0.9rem' }}>
                         Portfolio

@@ -11,7 +11,7 @@ const Contact = () => {
     return (
         <>
             <Box component="section" id="resume-download" sx={{ py: { xs: 8, md: 12 } }}>
-                <Container maxWidth="md">
+                <Container maxWidth="lg">
                     <motion.div
                         initial={{ scale: 0.9, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
@@ -86,7 +86,7 @@ const Contact = () => {
             </Box>
 
             <Box component="section" id="contact" sx={{ py: { xs: 8, md: 12 } }}>
-                <Container maxWidth="sm">
+                <Container maxWidth="md">
                     <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
                         <Typography variant="h3" sx={{
                             fontWeight: 900,

@@ -16,7 +16,7 @@ const Certifications = () => {
 
     return (
         <Box component="section" id="certs" sx={{ py: { xs: 8, md: 12 } }}>
-            <Container maxWidth="lg">
+            <Container maxWidth="xl">
                 <Box sx={{ mb: { xs: 6, md: 8 }, textAlign: 'center' }}>
                     <Typography variant="overline" color="primary" sx={{ fontWeight: 800, letterSpacing: 4, mb: 1, display: 'block' }}>
                         Education & Recognition

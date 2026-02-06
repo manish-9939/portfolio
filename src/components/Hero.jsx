@@ -17,12 +17,12 @@ const Hero = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                px: { xs: 3, sm: 6, md: '10%' },
+                px: { xs: 3, sm: 6, md: '5%' },
                 py: { xs: 12, md: 0 },
                 flexDirection: { xs: 'column-reverse', md: 'row' },
                 position: 'relative',
                 overflow: 'hidden',
-                gap: { xs: 6, md: 4 }
+                gap: { xs: 6, md: 8 }
             }}
         >
             <motion.div
@@ -30,7 +30,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                style={{ flex: 1, maxWidth: '600px', width: '100%' }}
+                style={{ flex: 1, maxWidth: '800px', width: '100%' }}
             >
                 <Typography
                     variant="subtitle1"
@@ -38,7 +38,7 @@ const Hero = () => {
                         color: 'primary.main',
                         fontWeight: 600,
                         mb: 1,
-                        fontSize: { xs: '1rem', md: '1.2rem' },
+                        fontSize: { xs: '0.9rem', md: '1.1rem' },
                         letterSpacing: 2,
                         textTransform: 'uppercase'
                     }}
@@ -49,7 +49,7 @@ const Hero = () => {
                 <Typography
                     variant="h1"
                     sx={{
-                        fontSize: { xs: '3rem', sm: '4rem', md: '4.8rem' },
+                        fontSize: { xs: '2.8rem', sm: '3.8rem', md: '4.2rem' },
                         lineHeight: 1.1,
                         mb: 2,
                         fontWeight: 900,
@@ -74,7 +74,7 @@ const Hero = () => {
                         alignItems: 'center',
                         flexWrap: 'wrap',
                         gap: 1.5,
-                        fontSize: { xs: '1.3rem', sm: '1.8rem', md: '2.1rem' }
+                        fontSize: { xs: '1.2rem', sm: '1.6rem', md: '1.8rem' }
                     }}
                 >
                     I am a
@@ -102,8 +102,8 @@ const Hero = () => {
                     sx={{
                         mb: 5,
                         color: 'text.secondary',
-                        maxWidth: '500px',
-                        fontSize: { xs: '1rem', md: '1.1rem' },
+                        maxWidth: '600px',
+                        fontSize: { xs: '1rem', md: '1.05rem' },
                         lineHeight: 1.8,
                         fontWeight: 400
                     }}

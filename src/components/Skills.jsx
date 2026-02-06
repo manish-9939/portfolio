@@ -233,7 +233,7 @@ const Skills = () => {
 
     return (
         <Box component="section" id="skills" sx={{ py: { xs: 10, md: 15 }, overflow: 'hidden' }}>
-            <Container maxWidth="lg">
+            <Container maxWidth="xl">
                 <Grid container spacing={{ xs: 8, md: 10 }} alignItems="center">
                     <Grid item xs={12} md={5}>
                         <motion.div

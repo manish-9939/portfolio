@@ -25,7 +25,7 @@ const About = () => {
 
     return (
         <Box component="section" id="about" sx={{ py: { xs: 10, md: 15 } }}>
-            <Container maxWidth="lg">
+            <Container maxWidth="xl">
                 <Grid container spacing={{ xs: 6, md: 10 }} alignItems="center">
                     <Grid item xs={12} md={7}>
                         <motion.div
