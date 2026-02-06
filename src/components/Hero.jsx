@@ -213,8 +213,8 @@ const Hero = () => {
                             height: '100%',
                             borderRadius: 0,
                             '& img': {
-                                objectPosition: 'center 20%',
-                                transform: 'scale(1.4)',
+                                objectPosition: 'center 8%',
+                                transform: 'scale(1.25)',
                                 filter: 'contrast(1.05) brightness(1.05)'
                             }
                         }}
