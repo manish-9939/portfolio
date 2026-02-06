@@ -29,6 +29,7 @@ const Navbar = ({ themeMode, toggleTheme }) => {
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
         { name: 'Projects', path: '/projects' },
+        { name: 'Certifications', path: '/certifications' },
         { name: 'Tech', path: '/skills' },
         { name: 'Contact', path: '/contact' }
     ];
@@ -100,7 +101,7 @@ const Navbar = ({ themeMode, toggleTheme }) => {
                             border: `1px solid ${theme.palette.divider}`
                         }}>
                             <Stack direction="row" spacing={0.5}>
-                                {navItems.slice(0, 4).map((item) => {
+                                {navItems.slice(0, 5).map((item) => {
                                     const isActive = location.pathname === item.path;
                                     return (
                                         <Box key={item.name} sx={{ position: 'relative' }}>
