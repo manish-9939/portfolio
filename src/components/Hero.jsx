@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { Box, Typography, Button, Avatar, useTheme } from '@mui/material';
+import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Hero = () => {
@@ -120,8 +121,8 @@ const Hero = () => {
                 }}>
                     <Button
                         variant="contained"
-                        component="a"
-                        href="contact"
+                        component={Link}
+                        to="/contact"
                         endIcon={<ArrowForwardIcon />}
                         sx={{
                             borderRadius: '16px',

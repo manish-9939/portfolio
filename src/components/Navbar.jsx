@@ -101,7 +101,7 @@ const Navbar = ({ themeMode, toggleTheme }) => {
                             border: `1px solid ${theme.palette.divider}`
                         }}>
                             <Stack direction="row" spacing={0.5}>
-                                {navItems.slice(0, 5).map((item) => {
+                                {navItems.map((item) => {
                                     const isActive = location.pathname === item.path;
                                     return (
                                         <Box key={item.name} sx={{ position: 'relative' }}>
