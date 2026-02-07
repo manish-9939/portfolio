@@ -30,7 +30,7 @@ const ScrollToTop = () => {
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [mode, setMode] = useState(localStorage.getItem('theme') || 'dark');
+  const [mode, setMode] = useState(localStorage.getItem('theme') || 'light');
   const location = useLocation();
   const [prevPath, setPrevPath] = useState(location.pathname);
 
