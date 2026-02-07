@@ -30,8 +30,7 @@ const Navbar = ({ themeMode, toggleTheme }) => {
         { name: 'About', path: '/about' },
         { name: 'Projects', path: '/projects' },
         { name: 'Certifications', path: '/certifications' },
-        { name: 'Tech', path: '/skills' },
-        { name: 'Contact', path: '/contact' }
+        { name: 'Skills', path: '/skills' }
     ];
 
     return (
